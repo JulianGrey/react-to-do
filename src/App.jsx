@@ -10,7 +10,7 @@ function App() {
   function handleAddToDo() {
     const newToDo = {
       title: toDoTitle,
-      description: toDoDescription
+      description: toDoDescription || 'No description'
     };
 
     const updatedToDoList = [...toDoList, newToDo];
