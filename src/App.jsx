@@ -18,6 +18,17 @@ function App() {
     setToDoList(updatedToDoList);
   }
 
+  function handleRemoveToDo(toDo) {
+    const updatedToDoList = [...toDoList];
+    const selectedToDoIndex = updatedToDoList.indexOf(toDo);
+
+    if (selectedToDoIndex > -1) {
+      updatedToDoList.splice(selectedToDoIndex, 1);
+    }
+
+    setToDoList(updatedToDoList);
+  }
+
   function handleChangeDescription(event) {
     setToDoDescription(event.target.value);
   }
@@ -53,9 +64,10 @@ function App() {
         <div className='to-do-list'>
           <ul>
             {toDoList.map((toDo, toDoIndex) => (
-              <>
-                <li key={toDoIndex}>{toDo.title} - {toDo.description}</li>
-              </>
+              <li key={toDoIndex}>
+                {toDo.title} - {toDo.description}
+                <button onClick={() => handleRemoveToDo(toDo)}>Remove</button>
+              </li>
             ))}
           </ul>
         </div>
