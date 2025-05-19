@@ -3,7 +3,7 @@ export default function ToDo({toDo, onRemoveToDo}) {
 
   return (
     <li>
-      {title} - {description}
+      {description ? `${title} - ${description}` : `${title}`}
       <button onClick={() => onRemoveToDo(toDo)}>Remove</button>
     </li>
   );

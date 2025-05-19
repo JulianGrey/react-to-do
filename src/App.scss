@@ -1,6 +1,7 @@
 .to-do-add {
   display: flex;
   flex-direction: column;
+  margin-bottom: 40px;
 
   .to-do-title, .to-do-description {
     margin-bottom: 10px;
@@ -10,5 +11,11 @@
     input {
       width: 400px;
     }
+  }
+
+  .title-warning {
+    color: red;
+    font-size: 12px;
+    margin-left: 10px;
   }
 }

@@ -8,16 +8,22 @@ function App() {
   const [toDoList, setToDoList] = useState([]);
   const [toDoTitle, setToDoTitle] = useState('');
   const [toDoDescription, setToDoDescription] = useState('');
+  const [showTitleWarning, setShowTitleWarning] = useState(false);
 
   function handleAddToDo() {
     const newToDo = {
       title: toDoTitle,
-      description: toDoDescription || 'No description'
+      description: toDoDescription
     };
 
-    const updatedToDoList = [...toDoList, newToDo];
-
-    setToDoList(updatedToDoList);
+    if (toDoTitle) {
+      const updatedToDoList = [...toDoList, newToDo];
+  
+      setToDoList(updatedToDoList);
+      setShowTitleWarning(false);
+    } else {
+      setShowTitleWarning(true);
+    }
   }
 
   function handleRemoveToDo(toDo) {
@@ -53,6 +59,7 @@ function App() {
               onChange={handleChangeTitle}
               value={toDoTitle}
             />
+            <span className={'title-warning' + (showTitleWarning ? '' : ' hide')}>Title is required</span>
           </div>
           <div className='to-do-description'>
             <label htmlFor='to-do-description'>Description: </label>
@@ -60,7 +67,7 @@ function App() {
               required
               type='textarea'
               name='to-do-description'
-              placeholder='Please add a description'
+              placeholder='Please add a description (optional)'
               onChange={handleChangeDescription}
               value={toDoDescription}
             />
