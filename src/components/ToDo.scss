@@ -8,8 +8,13 @@ $spacer: 8px;
     margin-left: $spacer;
   }
 
+  .entry-title-container {
+    display: flex;
+  }
+
   .entry-title {
     &, &:before {
+      cursor: pointer;
       display: flex;
       align-items: center;
     }
