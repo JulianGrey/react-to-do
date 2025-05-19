@@ -1,6 +1,6 @@
 import 'reset-css';
 import { useState } from 'react';
-import './App.css';
+import './App.scss';
 import ToDo from './components/ToDo.jsx';
 
 function App() {
