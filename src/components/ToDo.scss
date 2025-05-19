@@ -1,4 +1,4 @@
-$chevron-dimensions: 20px;
+$marker-dimensions: 20px;
 $spacer: 8px;
 
 .to-do-entry {
@@ -21,19 +21,33 @@ $spacer: 8px;
     display: flex;
   }
 
-  .entry-title {
+  .entry-title, .has-description {
     &, &:before {
-      cursor: pointer;
       display: flex;
       align-items: center;
     }
-    
+
     &:before {
       justify-content: center;
-      font-size: $chevron-dimensions;
-      width: $chevron-dimensions;
-      height: $chevron-dimensions;
-      content:"\203A";
+      font-size: $marker-dimensions;
+      width: $marker-dimensions;
+      height: $marker-dimensions;
+    }
+  }
+
+  .entry-title {
+    &:before {
+      content: "\002D"
+    }
+  }
+
+  .has-description {
+    &, &:before {
+      cursor: pointer;
+    }
+
+    &:before {
+      content: "\203A";
     }
 
     &.open {

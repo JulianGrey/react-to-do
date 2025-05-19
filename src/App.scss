@@ -1,3 +1,10 @@
+@import './styles/variables';
+
+.to-do-add, .to-do-list {
+  background-color: $section-background-color;
+  border-radius: 10px;
+  padding: 24px;
+}
 .to-do-add {
   display: flex;
   flex-direction: column;
@@ -19,3 +26,4 @@
     margin-left: 10px;
   }
 }
+

@@ -85,6 +85,7 @@ function App() {
           <button onClick={handleAddToDo}>Add to do</button>
         </div>
         <div className='to-do-list'>
+          <h1>List</h1>
           <ul>
             {toDoList.map((toDo, toDoIndex) => (
               <ToDo toDo={toDo} key={toDoIndex} onRemoveToDo={handleRemoveToDo} />

@@ -14,7 +14,7 @@ export default function ToDo({toDo, onRemoveToDo}) {
   return (
     <li className='to-do-entry'>
       <div className='entry-title-container'>
-        <div onClick={handleIsOpen} className={`entry-title${isOpen ? ' open' : ''}`}>
+        <div onClick={handleIsOpen} className={`entry-title${isOpen ? ' open' : ''}${description ? ' has-description' : ''}`}>
           {title}
         </div>
         <button onClick={() => onRemoveToDo(toDo)}>Remove</button>
