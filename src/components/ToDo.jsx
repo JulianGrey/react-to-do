@@ -3,7 +3,7 @@ import { useState } from 'react';
 import './ToDo.scss';
 
 export default function ToDo({toDo, onRemoveToDo}) {
-  const { title, description } = toDo;
+  const { task, description } = toDo;
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -13,9 +13,9 @@ export default function ToDo({toDo, onRemoveToDo}) {
 
   return (
     <li className='to-do-entry'>
-      <div className='entry-title-container'>
-        <div onClick={handleIsOpen} className={`entry-title${isOpen ? ' open' : ''}${description ? ' has-description' : ''}`}>
-          {title}
+      <div className='entry-task-container'>
+        <div onClick={handleIsOpen} className={`entry-task${isOpen ? ' open' : ''}${description ? ' has-description' : ''}`}>
+          {task}
         </div>
         <button onClick={() => onRemoveToDo(toDo)}>Remove</button>
       </div>

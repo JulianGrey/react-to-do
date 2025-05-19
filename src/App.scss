@@ -10,7 +10,7 @@
   flex-direction: column;
   margin-bottom: 40px;
 
-  .to-do-title, .to-do-description {
+  .to-do-task, .to-do-description {
     margin-bottom: 10px;
   }
 
@@ -20,7 +20,7 @@
     }
   }
 
-  .title-warning {
+  .task-warning {
     color: red;
     font-size: 12px;
     margin-left: 10px;

@@ -16,11 +16,11 @@
     }
   }
 
-  .entry-title-container {
+  .entry-task-container {
     display: flex;
   }
 
-  .entry-title, .has-description {
+  .entry-task, .has-description {
     &, &:before {
       display: flex;
       align-items: center;
@@ -34,7 +34,7 @@
     }
   }
 
-  .entry-title {
+  .entry-task {
     &:before {
       content: "\002D"
     }

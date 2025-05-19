@@ -6,32 +6,32 @@ import ToDo from './components/ToDo.jsx';
 
 function App() {
   const [isDuplicate, setIsDuplicate] = useState(false);
-  const [showTitleWarning, setShowTitleWarning] = useState(false);
+  const [showTaskWarning, setShowTaskWarning] = useState(false);
   const [toDoDescription, setToDoDescription] = useState('');
   const [toDoList, setToDoList] = useState([]);
-  const [toDoTitle, setToDoTitle] = useState('');
+  const [toDoTask, setToDoTask] = useState('');
 
   function handleAddToDo() {
     const newToDo = {
-      title: toDoTitle,
+      task: toDoTask,
       description: toDoDescription
     };
     
-    const duplicate = toDoList.find(toDo => toDo.title === newToDo.title);
+    const duplicate = toDoList.find(toDo => toDo.task === newToDo.task);
     setIsDuplicate(duplicate);
     
     if (duplicate) {
-      setShowTitleWarning(false);
+      setShowTaskWarning(false);
       return;
     }
     
-    if (toDoTitle) {
+    if (toDoTask) {
       const updatedToDoList = [...toDoList, newToDo];
 
       setToDoList(updatedToDoList);
-      setShowTitleWarning(false);
+      setShowTaskWarning(false);
     } else {
-      setShowTitleWarning(true);
+      setShowTaskWarning(true);
     }
   }
 
@@ -50,26 +50,26 @@ function App() {
     setToDoDescription(event.target.value);
   }
   
-  function handleChangeTitle(event) {
-    setToDoTitle(event.target.value);
+  function handleChangeTask(event) {
+    setToDoTask(event.target.value);
   }
 
   return (
     <>
       <main>
         <div className='to-do-add'>
-          <div className='to-do-title'>
-            <label htmlFor='to-do-title'>Title: </label>
+          <div className='to-do-task'>
+            <label htmlFor='to-do-task'>Task: </label>
             <input
               required
               type='text'
-              name='to-do-title'
-              placeholder='Please add a title'
-              onChange={handleChangeTitle}
-              value={toDoTitle}
+              name='to-do-task'
+              placeholder='Please add a task'
+              onChange={handleChangeTask}
+              value={toDoTask}
             />
-            {showTitleWarning && <span className='title-warning'>Title is required</span>}
-            {isDuplicate && <span className='title-warning'>Title already exists</span>}
+            {showTaskWarning && <span className='task-warning'>Task is required</span>}
+            {isDuplicate && <span className='task-warning'>Task already exists</span>}
           </div>
           <div className='to-do-description'>
             <label htmlFor='to-do-description'>Description: </label>
