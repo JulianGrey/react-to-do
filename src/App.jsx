@@ -1,6 +1,7 @@
 import 'reset-css';
 import { useState } from 'react';
 import './App.css';
+import ToDo from './components/ToDo.jsx';
 
 function App() {
   const [toDoList, setToDoList] = useState([]);
@@ -64,10 +65,7 @@ function App() {
         <div className='to-do-list'>
           <ul>
             {toDoList.map((toDo, toDoIndex) => (
-              <li key={toDoIndex}>
-                {toDo.title} - {toDo.description}
-                <button onClick={() => handleRemoveToDo(toDo)}>Remove</button>
-              </li>
+              <ToDo toDo={toDo} key={toDoIndex} onRemoveToDo={handleRemoveToDo} />
             ))}
           </ul>
         </div>
