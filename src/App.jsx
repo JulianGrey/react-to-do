@@ -5,20 +5,29 @@ import './App.scss';
 import ToDo from './components/ToDo.jsx';
 
 function App() {
+  const [isDuplicate, setIsDuplicate] = useState(false);
+  const [showTitleWarning, setShowTitleWarning] = useState(false);
+  const [toDoDescription, setToDoDescription] = useState('');
   const [toDoList, setToDoList] = useState([]);
   const [toDoTitle, setToDoTitle] = useState('');
-  const [toDoDescription, setToDoDescription] = useState('');
-  const [showTitleWarning, setShowTitleWarning] = useState(false);
 
   function handleAddToDo() {
     const newToDo = {
       title: toDoTitle,
       description: toDoDescription
     };
-
+    
+    const duplicate = toDoList.find(toDo => toDo.title === newToDo.title);
+    setIsDuplicate(duplicate);
+    
+    if (duplicate) {
+      setShowTitleWarning(false);
+      return;
+    }
+    
     if (toDoTitle) {
       const updatedToDoList = [...toDoList, newToDo];
-  
+
       setToDoList(updatedToDoList);
       setShowTitleWarning(false);
     } else {
@@ -60,6 +69,7 @@ function App() {
               value={toDoTitle}
             />
             {showTitleWarning && <span className='title-warning'>Title is required</span>}
+            {isDuplicate && <span className='title-warning'>Title already exists</span>}
           </div>
           <div className='to-do-description'>
             <label htmlFor='to-do-description'>Description: </label>
