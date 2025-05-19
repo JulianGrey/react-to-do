@@ -8,6 +8,15 @@ $spacer: 8px;
     margin-left: $spacer;
   }
 
+  .entry-description {
+    height: 0;
+    overflow: hidden;
+
+    &.open {
+      height: auto;
+    }
+  }
+
   .entry-title-container {
     display: flex;
   }
@@ -27,7 +36,7 @@ $spacer: 8px;
       content:"\203A";
     }
 
-    &.active {
+    &.open {
       &:before {
         transform: rotate(90deg);
       }
