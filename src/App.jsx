@@ -86,6 +86,7 @@ function App() {
         </div>
         <div className='to-do-list'>
           <h1>List</h1>
+          {toDoList.length < 1 && <p>The list is empty. Please add a task.</p>}
           <ul>
             {toDoList.map((toDo, toDoIndex) => (
               <ToDo toDo={toDo} key={toDoIndex} onRemoveToDo={handleRemoveToDo} />
