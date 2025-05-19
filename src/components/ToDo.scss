@@ -1,5 +1,4 @@
-$marker-dimensions: 20px;
-$spacer: 8px;
+@import '../styles/variables';
 
 .to-do-entry {
   margin-bottom: $spacer;
