@@ -1,0 +1,14 @@
+.to-do-add {
+  display: flex;
+  flex-direction: column;
+
+  .to-do-title, .to-do-description {
+    margin-bottom: 10px;
+  }
+
+  .to-do-description {
+    input {
+      width: 400px;
+    }
+  }
+}

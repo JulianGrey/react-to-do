@@ -1,6 +1,7 @@
-import 'reset-css';
 import { useState } from 'react';
+
 import './App.scss';
+
 import ToDo from './components/ToDo.jsx';
 
 function App() {
@@ -41,25 +42,29 @@ function App() {
   return (
     <>
       <main>
-        <div className='add'>
-          <label htmlFor='to-do-title'>Title: </label>
-          <input
-            required
-            type='text'
-            name='to-do-title'
-            placeholder='Please add a title'
-            onChange={handleChangeTitle}
-            value={toDoTitle}
-          />
-          <label htmlFor='to-do-description'>Description: </label>
-          <input
-            required
-            type='textarea'
-            name='to-do-description'
-            placeholder='Please add a description'
-            onChange={handleChangeDescription}
-            value={toDoDescription}
-          />
+        <div className='to-do-add'>
+          <div className='to-do-title'>
+            <label htmlFor='to-do-title'>Title: </label>
+            <input
+              required
+              type='text'
+              name='to-do-title'
+              placeholder='Please add a title'
+              onChange={handleChangeTitle}
+              value={toDoTitle}
+            />
+          </div>
+          <div className='to-do-description'>
+            <label htmlFor='to-do-description'>Description: </label>
+            <input
+              required
+              type='textarea'
+              name='to-do-description'
+              placeholder='Please add a description'
+              onChange={handleChangeDescription}
+              value={toDoDescription}
+            />
+          </div>
           <button onClick={handleAddToDo}>Add to do</button>
         </div>
         <div className='to-do-list'>
