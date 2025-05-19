@@ -2,6 +2,10 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin: 20px;
 
+  button {
+    cursor: pointer;
+  }
+
   .hide {
     display: none;
   }

@@ -1,0 +1,9 @@
+$spacer: 8px;
+
+.to-do-entry {
+  margin-bottom: $spacer;
+
+  button {
+    margin-left: $spacer;
+  }
+}
