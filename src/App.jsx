@@ -59,7 +59,7 @@ function App() {
               onChange={handleChangeTitle}
               value={toDoTitle}
             />
-            <span className={'title-warning' + (showTitleWarning ? '' : ' hide')}>Title is required</span>
+            {showTitleWarning && <span className='title-warning'>Title is required</span>}
           </div>
           <div className='to-do-description'>
             <label htmlFor='to-do-description'>Description: </label>
